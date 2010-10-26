@@ -8,9 +8,17 @@ var Force = function() {
 	this.force = 50;
 	
 	this.update = function(world ,mvpX, mvpY) {
-		var angle = Math.atan2(mvpY,mvpX);
 		
-		force.angle += (angle - force.angle) / 20;
+		var anglediff = ((Math.atan2(mvpY,mvpX)) - force.angle);
+		
+		while(anglediff < -Math.PI) {
+			anglediff += Math.PI * 2;
+		}
+		while(anglediff > Math.PI) {
+			anglediff -= Math.PI * 2;
+		}
+		
+		force.angle += anglediff / 15;
 		
 		force.x = Math.cos(force.angle)*world.size;
 		force.y = Math.sin(force.angle)*world.size;
