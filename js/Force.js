@@ -26,8 +26,8 @@ var Force = function() {
 	
 	this.draw = function(context) {
 		context.beginPath();
-		context.arc(force.x,force.y,force.force,0,Math.PI*2);
-		context.closePath();
+		context.arc(force.x,force.y,force.force,0, Math.PI*2);
 		context.stroke();
+		context.closePath();
 	}
 }

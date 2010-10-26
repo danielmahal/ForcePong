@@ -1,7 +1,7 @@
 var World = function() {
 	var world = this;
 	
-	world.size = 500;
+	world.size = 400;
 	
 	world.update = function() {
 		
