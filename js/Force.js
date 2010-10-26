@@ -5,7 +5,7 @@ var Force = function() {
 	
 	this.angle = 0;
 	
-	this.force = 50;
+	this.force = 30;
 	
 	this.update = function(world ,mvpX, mvpY) {
 		

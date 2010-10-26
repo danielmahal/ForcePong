@@ -18,8 +18,10 @@ var Camera = function(aCanvas, aContext, x, y, debug) {
 		
 		// Reset transform matrix
 		context.setTransform(1,0,0,1,0,0);
-		context.fillStyle = '#fff';
+		context.fillStyle = '#25414f';
 		context.fillRect(0,0,canvas.width, canvas.height);
+		
+		context.fillStyle = context.strokeStyle = '#fff';
 		
 		context.translate(translateX, translateY);
 		context.scale(camera.zoom, camera.zoom);

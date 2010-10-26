@@ -5,9 +5,9 @@ var Ball = function() {
 	ball.y = 0;
 	
 	ball.angle = Math.random() * Math.PI * 2;
-	ball.momentum = 3;
+	ball.momentum = 1;
 	
-	ball.size = 10;
+	ball.size = 2;
 	
 	ball.update = function(world) {
 		var distanceFromCenter = Math.sqrt(Math.pow(ball.y, 2) + Math.pow(ball.x, 2));
@@ -25,6 +25,6 @@ var Ball = function() {
 		context.beginPath();
 		context.arc(ball.x,ball.y,ball.size,0,Math.PI*2);
 		context.closePath();
-		context.stroke();
+		context.fill();
 	}
 };
