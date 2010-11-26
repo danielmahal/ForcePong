@@ -10,3 +10,4 @@ window.addEventListener('resize', app.resize);
 document.addEventListener('mousemove', app.mousemove);
 
 setInterval(runLoop, 1000/60);
+//runLoop();

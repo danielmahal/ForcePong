@@ -9,14 +9,14 @@ var App = function(canvas) {
 		var mvp = getMouseWorldPosition();
 		
 		model.ball.update(model.world);
-		model.force.update(model.world, mvp.x, mvp.y);
-	}
+		model.paddle.update(model.world, mvp.x, mvp.y);
+	};
 	
 	this.draw = function() {
 		model.camera.setupContext();
 		model.world.draw(context);
 		model.ball.draw(context);
-		model.force.draw(context);
+		model.paddle.draw(context);
 	};
 	
 	this.mousemove = function(e) {
@@ -47,7 +47,7 @@ var App = function(canvas) {
 		model.camera = new Camera(canvas, context, 0, 0, false);
 		model.world = new World();
 		model.ball = new Ball();
-		model.force = new Force();
+		model.paddle = new Paddle();
 		
 		app.resize();
 	})();

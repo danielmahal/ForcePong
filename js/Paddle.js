@@ -1,5 +1,5 @@
-var Force = function() {
-	var force = this;
+var Paddle = function() {
+	var paddle = this;
 	this.x = 0;
 	this.y = 0;
 	
@@ -9,7 +9,7 @@ var Force = function() {
 	
 	this.update = function(world ,mvpX, mvpY) {
 		
-		var anglediff = ((Math.atan2(mvpY,mvpX)) - force.angle);
+		var anglediff = ((Math.atan2(mvpY,mvpX)) - paddle.angle);
 		
 		while(anglediff < -Math.PI) {
 			anglediff += Math.PI * 2;
@@ -18,15 +18,15 @@ var Force = function() {
 			anglediff -= Math.PI * 2;
 		}
 		
-		force.angle += anglediff / 15;
+		paddle.angle += anglediff / 15;
 		
-		force.x = Math.cos(force.angle)*world.size;
-		force.y = Math.sin(force.angle)*world.size;
+		paddle.x = Math.cos(paddle.angle)*world.size;
+		paddle.y = Math.sin(paddle.angle)*world.size;
 	}
 	
 	this.draw = function(context) {
 		context.beginPath();
-		context.arc(force.x,force.y,force.force,0, Math.PI*2);
+		context.arc(paddle.x,paddle.y,paddle.force,0, Math.PI*2);
 		context.stroke();
 		context.closePath();
 	}
